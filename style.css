@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #2f4f4f;
+}
+
+.main {
+  margin: 0 auto;
+  width: 500px;
+}
+.list {
+  display: grid;
+  grid-template: repeat(5, 231px) / repeat(2, 200px);
+  gap: 40px 30px;
+  list-style: none;
+  padding: 30px 35px 180px 35px;
+}
+
+.list-item {
+  display: grid;
+  grid-template: 84px 32px 84px 8px 23px / 158px 32px 10px;
+  position: relative;
+  transition: all 1s linear;
+}
+.circle {
+  position: absolute;
+  background: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 32px;
+  color: #8b0000;
+  grid-area: 2/2;
+}
+.name {
+  grid-area: 5 / span 3;
+  font-size: 20px;
+  text-align: center;
+}
+.men {
+  grid-area: span 3 / span 3;
+}
+
+.list-item:hover {
+  background: #eee;
+  height: 287px;
+  z-index: 1;
+  grid-template: 84px 32px 84px 8px 23px 56px/ 158px 32px 10px;
+  border-radius: 10px;
+  transform: scale(1.2);
+}
+.list-item:hover::after {
+  content: "Basketball, $85.5M";
+  grid-area: 6 / span 3;
+  line-height: 56px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.list-item:nth-child(1):hover::after {
+  content: "Football, 43M";
+}
+
+.list-item:nth-child(2):hover::after {
+  content: "Football, 193M";
+}
+.list-item:nth-child(3):hover::after {
+  content: "Football, 89M";
+}
+
+.list-item:nth-child(4):hover::after {
+  content: "Boxing, 45M";
+}
+
+.list-item:nth-child(5):hover::after {
+  content: "Football, 63M";
+}
+
+.list-item:nth-child(6):hover::after {
+  content: "Basketball, 43M";
+}
+
+.list-item:nth-child(7):hover::after {
+  content: "Tennis, 43M";
+}
+.list-item:nth-child(8):hover::after {
+  content: "Volleyball, 43M";
+}
+.list-item:nth-child(9):hover::after {
+  content: "Regbi, 43M";
+}
+
+.list-item:nth-child(10):hover::after {
+  content: "Regbi, 43M";
+}
+
+@media (min-width: 1000px) {
+  .list {
+    grid-template: repeat(3, 231px) / repeat(4, 200px);
+    padding: 30px 55px 194px 55px;
+  }
+  .main {
+    width: 1000px;
+  }
+}
